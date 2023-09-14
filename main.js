@@ -8,19 +8,38 @@ const url = "https://64d5c8e3613ee4426d9799bd.mockapi.io/promineo/users";
 const entries = [];
 const usersRoot = document.querySelector("#userData");
 
+async function edit(index, newData) {
+  const endpoint = `${url}/${index}`;
+  const requestOptions = {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(newData),
+  };
+
+  await fetch(endpoint, requestOptions);
+  read();
+}
+
+async function del(index) {
+  const endpoint = `${url}/${index}`;
+  await fetch(endpoint, { method: "DELETE" });
+  read();
+}
+
 async function read() {
   const data = await fetch(url).then((response) => response.json());
-  console.log(data);
-  // usersElem.innerHTML = JSON.stringify(data);
 
-  entries.forEach(ent => ent.remove());
+  // clear old elements
+  for (let i = 0; i < entries.length; i++) {
+    entries[i].remove();
+  }
 
   for (let i = 0; i < data.length; i++) {
     const element = data[i];
 
     // entry
     const entry = document.createElement("div");
-    entry.classList.add('entry');
+    entry.classList.add("entry");
     usersRoot.appendChild(entry);
 
     // image
@@ -36,11 +55,20 @@ async function read() {
     // edit
     const editButton = document.createElement("button");
     editButton.innerHTML = `Edit`;
+    editButton.addEventListener("click", () =>
+      edit(element.id, {
+        user: "asdf",
+        email: "jkl",
+        name: "qwerty",
+        avatar: "https://picsum.photos/125",
+      })
+    );
     entry.appendChild(editButton);
 
-    // edit
+    // delete
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML = `Delete`;
+    deleteButton.addEventListener("click", () => del(element.id));
     entry.appendChild(deleteButton);
 
     entries.push(entry);
@@ -48,4 +76,3 @@ async function read() {
 }
 
 read();
-// setupReadButton(document.querySelector("#read"), read);
