@@ -1,7 +1,7 @@
 import "./style.css";
 
 // import { setupCounter } from './counter.js'
-import { setupReadButton } from "./readButton";
+// import { setupReadButton } from "./readButton";
 
 // setupCounter(document.querySelector("#counter"));
 const url = "https://64d5c8e3613ee4426d9799bd.mockapi.io/promineo/users";
@@ -47,4 +47,5 @@ async function read() {
   }
 }
 
-setupReadButton(document.querySelector("#read"), read);
+read();
+// setupReadButton(document.querySelector("#read"), read);

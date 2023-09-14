@@ -18,7 +18,7 @@ button {
   flex-direction: column;
   /* height: 100%; */
   /* flex: 0 1 auto; */
-  background-color: tomato;
+  /* background-color: tomato; */
   justify-content: center;
   align-items: center;
 }
@@ -60,6 +60,12 @@ h2{
   text-align: center;
 }
 
+.entry > img {
+  border-radius: 50%;
+  border: solid white 0.1rem;
+  margin: 0.5rem;
+}
+
 .entry:last-of-type {
   /* background-color: blue; */
   margin-bottom: 2rem;
@@ -74,9 +80,9 @@ h2{
   background-color: pink;
 } */
 
-body{
+/* body{
   background-color: rebeccapurple;
-}
+} */
 
 
 #app{
