@@ -85,6 +85,52 @@ h2{
 } */
 
 
+.modal {
+  width: 450px;
+  height: 600px;
+  position: absolute;
+  top: calc(50% - 300px);
+  left: calc(50% - 225px);
+  background-color:skyblue;
+  border: solid black 0.25rem;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal > button {
+  margin-inline: auto;
+  width: 50%;
+}
+
+.modal > div{
+  width: 90%;
+  display: grid;
+  margin-inline: auto;
+  grid-template-columns: 0.5fr 1fr;
+  /* grid-template-areas: ?
+  "label button",
+  "label button",
+  "label button",
+  "      button"; */
+
+  /* background-color: brown; */
+  /* justify-content: center; */
+  /* align-items: end; */
+}
+
+.modal > div > label {
+  /* background-color: gray; */
+  text-align: center;
+}
+.modal > div > input {
+  width: 100%;
+  /* background-color: gray; */
+}
+
 #app{
   height: 100vh;
   background-color: red;
