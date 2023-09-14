@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
 }
 
 html {
@@ -12,6 +12,47 @@ button {
   padding: 0.5rem 2rem;
 }
 
+#userData{
+  display: grid;
+  grid-template-columns: 1fr;
+  scroll-snap-type: y mandatory;
+  margin-inline: auto;
+  width: clamp(400px, 80%,800px);
+  height: 500px;
+  overflow-y: scroll;
+  /* background-color: cadetblue; */
+  /* width: clamp(20rem, 50%, 30rem); */
+  justify-content: center;
+}
+
+.entry {
+  scroll-snap-align: center;
+  border: solid black .1rem;
+  display: grid;
+  grid-template-columns: 0.25fr 1fr;
+  background-color: steelblue;
+}
+
+.entry > span {
+  /* background-color: goldenrod; */
+  align-self: center;
+}
+
+.entry:last-of-type {
+  /* background-color: blue; */
+  margin-bottom: 2rem;
+}
+/* #userData:last-child {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+} */
+
+body{
+  background-color: rebeccapurple;
+}
+
+
 #app{
   height: 100vh;
   background-color: red;
@@ -19,11 +60,11 @@ button {
 
 .button-wrapper{
   width: 100vw;
-  height: 100vh;
+  /* height: 100vh; */
   display: grid;
   grid-template-columns: 1fr;
 
   /* background-color: green; */
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }

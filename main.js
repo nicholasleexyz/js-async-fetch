@@ -14,15 +14,22 @@ async function read() {
 
   for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    // span
-    const userName = document.createElement("span");
-    userName.innerHTML = `${element.user}`;
-    usersRoot.appendChild(userName);
+    // entry
+    const entry = document.createElement("div");
+    entry.classList.add('entry');
+    usersRoot.appendChild(entry);
+
 
     // image
     const userImage = document.createElement("img");
     userImage.setAttribute("src", element.avatar);
-    usersRoot.appendChild(userImage);
+    entry.appendChild(userImage);
+
+    // span
+    const userName = document.createElement("span");
+    userName.innerHTML = `${element.user}`;
+    entry.appendChild(userName);
+
   }
 }
 
